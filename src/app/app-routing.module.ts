@@ -6,6 +6,7 @@ import { DeleteComponent } from './delete/delete.component';
 import { LoginComponent } from './login/login.component';
 import { CreateComponent } from './create/create.component';
 import { RegisterComponent } from './register/register.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/product', pathMatch: 'full' },
@@ -15,6 +16,8 @@ const routes: Routes = [
   { path: 'create', component: CreateComponent },
   { path: 'update', component: UpdateComponent },
   { path: 'delete', component: DeleteComponent },
+  { path: 'delete', component: DeleteComponent },
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({

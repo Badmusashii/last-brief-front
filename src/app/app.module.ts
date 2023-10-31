@@ -12,6 +12,7 @@ import { DeleteComponent } from './delete/delete.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateComponent } from './create/create.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     DeleteComponent,
     CreateComponent,
     NavbarComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

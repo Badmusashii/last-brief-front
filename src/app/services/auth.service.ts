@@ -24,6 +24,7 @@ export class AuthService {
       })
     );
   }
+
   validateToken(): Observable<any> {
     return this.httpClient.get('http://localhost:3000/auth/validate');
   }
