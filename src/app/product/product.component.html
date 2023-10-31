@@ -1,0 +1,31 @@
+<div class="container">
+  <button (click)="redirect()" *ngIf="isAuthenticated">Creer un produit</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Category</th>
+        <th *ngIf="isAuthenticated">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}€</td>
+        <td>{{ product.quantity }}</td>
+        <td *ngIf="product.category">{{ product.category.name }}</td>
+        <td *ngIf="!product.category">N/A</td>
+        <td *ngIf="isAuthenticated">
+          <button (click)="modifyProduct(product.id)" class="btn-blue">
+            Modifier
+          </button>
+          <button (click)="deleteProduct(product.id)" class="btn-red">
+            Supprimer
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

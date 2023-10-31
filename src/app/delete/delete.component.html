@@ -1,0 +1,7 @@
+<div *ngIf="product">
+  <h2>Suppression du produit</h2>
+  <p>Nom : {{ product.name }}</p>
+  <p>Prix : {{ product.price }}</p>
+  <p>Quantité : {{ product.quantity }}</p>
+  <button (click)="onDelete()">Supprimer</button>
+</div>

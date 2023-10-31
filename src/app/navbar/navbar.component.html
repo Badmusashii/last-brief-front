@@ -1,0 +1,19 @@
+<nav class="container">
+  <ul class="nav">
+    <li>
+      <a [routerLink]="['/product']">Produits</a>
+    </li>
+    <li *ngIf="!isAuthenticated">
+      <a [routerLink]="['/login']">Login</a>
+    </li>
+    <li *ngIf="!isAuthenticated">
+      <a [routerLink]="['/register']">S'inscrire</a>
+    </li>
+    <li>
+      <span
+        class="status-indicator"
+        [ngClass]="{ green: isAuthenticated, red: !isAuthenticated }"
+      ></span>
+    </li>
+  </ul>
+</nav>
