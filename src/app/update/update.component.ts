@@ -35,6 +35,7 @@ export class UpdateComponent implements OnInit {
     this.productService.getAllCategories().subscribe(
       (data) => {
         this.categories = data;
+        console.log(this.categories);
       },
       (error) => {
         console.error('Erreur lors de la récupération des catégories:', error);
@@ -48,15 +49,15 @@ export class UpdateComponent implements OnInit {
       () => {
         alert('Produit mis à jour avec succès');
         this.router.navigate(['/product']);
-      },
-      (error) => {
-        if (error.status === 401) {
-          alert("Vous n'avez pas la permission de modifier ce produit !");
-        } else {
-          alert("Une erreur s'est produite lors de la mise à jour");
-        }
-        this.router.navigate(['/product']);
       }
+      // (error) => {
+      //   if (error.status === 401) {
+      //     alert("Vous n'avez pas la permission de modifier ce produit !");
+      //   } else {
+      //     alert("Une erreur s'est produite lors de la mise à jour");
+      //   }
+      //   this.router.navigate(['/product']);
+      // }
     );
   }
 }
